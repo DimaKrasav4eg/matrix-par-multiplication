@@ -1,5 +1,5 @@
 # Matrix par multiplication
-Implemented naive and strassen algorithm for matrix multiplication.
+Implemented naive and strassen algorithm for matrix multiplication. Graph for 1000×1000 matrix
 <img src="https://github.com/DimaKrasav4eg/matrix-par-multiplication/blob/master/images/graph.png" width="400">
 
 ## How to start
