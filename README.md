@@ -1,5 +1,5 @@
 # Matrix par multiplication
-Implemented naive single-threaded, naive multithreaded, strassen algorithm and multithreaded implementation of this algorithm.
+Implemented naive and strassen algorithm for matrix multiplication.
 ## How to start
 ```sh
 bash start.sh
