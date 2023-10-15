@@ -358,3 +358,4 @@ double test_time_strassen(int n, int rowsA, int colsA, int rowsB, int colsB){
 double test_time_naive(int n, int rowsA, int colsA, int rowsB, int colsB){
     return test_time_func(n, multiply_matrices, rowsA, colsA, rowsB, colsB);
 }
+

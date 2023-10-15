@@ -6,6 +6,7 @@ rowsB=1000
 colsB=1000
 
 repeat=1
+draw=0
 
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
@@ -32,6 +33,9 @@ while [[ "$#" -gt 0 ]]; do
             repeat=$2
             shift 2
             ;;
+        -dr|--draw)
+            draw=1
+            shift
         *) 
             echo "Invalid argument: $1"
             exit 1
@@ -45,3 +49,9 @@ ar rcs matrix_lib/libmatrixops.a matrix_lib/matrixops.o || exit 1
 
 gcc -fopenmp -o matrix_multiply_time_test.out matrix_multiply_time_test.c -I./matrix_lib -L./matrix_lib -lmatrixops -lm || exit 1
 ./matrix_multiply_time_test.out $rowsA $colsA $rowsB $colsB $repeat || exit 1
+
+if [[ draw == 1 ]]; then
+    gcc -fopenmp -o matrix_multiply_graph.out matrix_multiply_graph.c -I./matrix_lib -L./matrix_lib -lmatrixops -lm || exit 1
+    ./matrix_multiply_graph.out $rowsA $colsA $rowsB $colsB $repeat || exit 1
+    python3 draw.py
+fi
